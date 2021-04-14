@@ -57,7 +57,7 @@ def filter_files(filters: tp.Dict[str, tp.Set[str]]) -> None:
             categories = categorize_file(str(path), filters)
             if categories:
                 shutil.copy(str(path), make_destination_name(path, invalids))
-                file.write(f'{name}: {str(categories)}')
+                file.write(f'{name}: {str(categories)}\n')
             else:
                 shutil.copy(str(path), make_destination_name(path, valids))
 
